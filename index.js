@@ -1,10 +1,3 @@
-const Sequelize = require('sequelize')
-const sequelize = new Sequelize('Usuarios', 'root', '123456', {
-        host:"localhost"
-        dialect:'mysql'
-})
-
-
 const express = require('express')
 const app = express();
 
@@ -16,9 +9,10 @@ app.get("/", function(req, res){
 app.listen(8042, function(){console.log("server running!");});
 
 
-// nestjs
-// nodemon express
-
-//INSERT INTO usuarios(nome,email,idade)VALUES(
+// futuramente usar nestjs que usa TS
+// Pacotes utilizados neste projeto:
+// MYSQL2, NODEMON, NPM, EXPRESS
+// template add users
+// INSERT INTO usuarios(nome,email,idade)VALUES(
 //    "Pictor Alphaville","criaboy@gmail.com",20
 //);
