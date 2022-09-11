@@ -18,6 +18,7 @@ const sequelize = new Sequelize('sistemadecadastro', 'root', '123456', { // nome
         dialect:'mysql'
 })
     // Rotas
+    // a rota Main deveria puxar as outras rotas automaticamente, por algum diabos de motivo nao esta, por isso tenho de usar varios arquivos pra puxar os layouts.
     app.get('/', function(req,res){
         res.render('main', {layout : 'index'});
     })
