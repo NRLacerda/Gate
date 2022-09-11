@@ -9,6 +9,8 @@ sequelize.authenticate().then(function(){ // ao se conectar "then"> mostra mensa
     console.log("Falha ao conectar com o DB"+ erro)
 })
 
+// O nome disso é Models, modelos de tabela basicamente
+
 const Produtos = sequelize.define('Produtos',{
         productname:{
             type:Sequelize.STRING
@@ -35,11 +37,16 @@ const Usuarios = sequelize.define('usuarios',{
     }
 })
 
-Usuarios.create({
-    nome: "Testenilson",
-    email:"teste@gmail.com",
-    idade:15
-})
+
+
+
+
+
+
+
+
+
+
 
 
 /*

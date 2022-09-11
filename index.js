@@ -1,17 +1,24 @@
-const express = require('express')
-const app = express();
+const express = require('express'); 
+const app = express()
+const handlebars = require('express-handlebars')
 
-app.get("/", function(req, res){
-    res.sendFile(__dirname + "/html/index.html");
-});
+
+//Config
+    //Template engine
+app.engine('handlebars', handlebars.engine({defaultLayout:'main'})) // puxa o html  "main"
+app.set('view engine','handlebars')
+    //Conexão com o BD
+const Sequelize = require('sequelize')
+const sequelize = new Sequelize('sistemadecadastro', 'root', '123456', { // nome banco, user, senha, local do host, tipo de banco
+        host:"localhost",
+        dialect:'mysql'
+})
 
 
 app.listen(8042, function(){console.log("server running!");});
 
 
 // futuramente usar nestjs que usa TS
-// Pacotes utilizados neste projeto:
-// MYSQL2, NODEMON, NPM, EXPRESS
 // template add users
 // INSERT INTO usuarios(nome,email,idade)VALUES(
 //    "Pictor Alphaville","criaboy@gmail.com",20
