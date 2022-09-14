@@ -4,8 +4,7 @@ const handlebars = require("express-handlebars");
 const Post = require("./models/post")
 
 //Config
-//Template engine
-
+// Handlebars, carrega os "html"
 app.set("view engine", "handlebars");
 app.engine(
   "handlebars",
@@ -15,18 +14,16 @@ app.engine(
 );
 // Body Parser
 app.use(express.urlencoded({extended:false})); //Parse URL-encoded bodies    
-app.use(express.json()); //Used to parse JSON bodies//Conexão com o BD
+app.use(express.json()); //Used to parse JSON bodies
 
 // Rotas
-// a rota Main deveria puxar as outras rotas automaticamente, por algum diabos de motivo nao esta, por isso tenho de usar varios arquivos pra puxar os layouts.
-/*app.get('/', function(res){
         res.render('main', {layout : 'index'});
     })*/
     app.get("/caduser", function (req, res) {
-        res.render("caduser");
+        res.render("caduser"); // Rota de cadastro de usuário
     });
     app.post(`/add`, function (req, res) {
-        Post.create({
+        Post.create({ // Rota que puxa o Post.js para inserir dados no BD conforme status abaixo
             username:req.body.user,
             email:req.body.email,
             idade:req.body.idade
@@ -40,6 +37,7 @@ app.use(express.json()); //Used to parse JSON bodies//Conexão com o BD
    app.listen(8181, function () {
     console.log("server running!");
   });
+  
 
 
 /* Tinha usado isso pra testar se estava funcionando antes.
