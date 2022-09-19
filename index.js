@@ -5,6 +5,7 @@ const Post = require("./models/post")
 
 //Config
 // Handlebars, carrega os "html"
+
 app.set("view engine", "handlebars");
 app.engine(
   "handlebars",
@@ -17,8 +18,12 @@ app.use(express.urlencoded({extended:false})); //Parse URL-encoded bodies
 app.use(express.json()); //Used to parse JSON bodies
 
 // Rotas
-        res.render('main', {layout : 'index'});
-    })*/
+    app.get("/userslist", function(req,res){
+      Post.findAll().then(function(posts){ //tentando listar todos dados
+      console.log(posts)
+      res.render("userslist" ,{posts:posts})
+      })
+    })
     app.get("/caduser", function (req, res) {
         res.render("caduser"); // Rota de cadastro de usuário
     });
@@ -49,6 +54,4 @@ app.use(express.json()); //Used to parse JSON bodies
 // futuramente usar nestjs que usa TS
 // template add users
 // INSERT INTO usuarios(nome,email,idade)VALUES(
-// "Pictor Alphaville","criaboy@gmail.com",20
-//);
-*/
+// "Pictor Alphaville","criaboy@gmail.com",20*/
