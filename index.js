@@ -10,7 +10,7 @@ app.set("view engine", "handlebars");
 app.engine(
   "handlebars",
   handlebars.engine({
-    layoutsDir: __dirname + "/views/layouts", // puxa o html  "main"
+    layoutsDir: __dirname + "/views/layouts", // puxa o html  "main", que invoca em cadeia
   })
 );
 // Body Parser
@@ -19,7 +19,7 @@ app.use(express.json()); //Used to parse JSON bodies
 
 // Rotas
     app.get("/userslist", function(req,res){
-      Post.findAll().then(function(posts){ //tentando listar todos dados
+      Post.findAll().then(function(posts){ // lista todos dados
       console.log(posts)
       res.render("userslist" ,{posts:posts})
       })
@@ -29,10 +29,10 @@ app.use(express.json()); //Used to parse JSON bodies
     });
     app.post(`/add`, function (req, res) {
         Post.create({ // Rota que puxa o Post.js para inserir dados no BD conforme status abaixo
-            username:req.body.user,
+            username:req.body.user, // ESSA é a referência, ele pega do body pra criar um dado
             email:req.body.email,
             idade:req.body.idade
-        }).then(function(){
+        }).then(function(){// e se não conseguir ele da erro
             res.send("Usuário cadastrado com sucesso")
         }).catch(function(erro){
             res.send("Houve algum erro" + erro)
