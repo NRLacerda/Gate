@@ -1,14 +1,14 @@
 const db = require("./db")
 
-const Post =db.sequelize.define(`postagens`,{
-    username:{
+const Post =db.sequelize.define(`list`,{
+    criticidade:{
         type:db.Sequelize.STRING
     },
-    email:{
+    solicitante:{
         type:db.Sequelize.STRING
     },
-    idade:{
-        type:db.Sequelize.INTEGER
+    descricao:{
+        type:db.Sequelize.STRING
     }
 })
 

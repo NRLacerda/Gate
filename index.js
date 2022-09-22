@@ -18,24 +18,24 @@ app.use(express.urlencoded({extended:false})); //Parse URL-encoded bodies
 app.use(express.json()); //Used to parse JSON bodies
 
 // Rotas
-    app.get("/userslist", function(req,res){
-      Post.findAll().then(function(posts){ // lista todos dados
-      console.log(posts)
-      res.render("userslist" ,{posts:posts})
+    app.get("/todolist", function(req,res){
+      Post.findAll().then(function(list){ // lista todos dados
+      console.log(list)
+      res.render("todolist" ,{list:list})
       })
     })
-    app.get("/caduser", function (req, res) {
-        res.render("caduser"); // Rota de cadastro de usuário
+    app.get("/cadtodo", function (req, res) {
+        res.render("cadtodo"); // Rota de cadastro de sol
     });
     app.post(`/add`, function (req, res) {
         Post.create({ // Rota que puxa o Post.js para inserir dados no BD conforme status abaixo
-            username:req.body.user, // ESSA é a referência, ele pega do body pra criar um dado
-            email:req.body.email,
-            idade:req.body.idade
+            criticidade:req.body.criticidade, // ESSA é a referência, ele pega do body pra criar um dado
+            solicitante:req.body.solicitante,
+            descricao:req.body.descricao
         }).then(function(){// e se não conseguir ele da erro
-            res.send("Usuário cadastrado com sucesso")
+            res.send("Solicitação feita com sucesso")
         }).catch(function(erro){
-            res.send("Houve algum erro" + erro)
+            res.send("Houve algum erro " + erro)
         })
    });
 

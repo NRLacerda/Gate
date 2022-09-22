@@ -1,6 +1,6 @@
 const Sequelize = require("sequelize");
 
-const sequelize = new Sequelize("postapp", "root", "@n1Mseguranza", {
+const sequelize = new Sequelize("todolist", "root", "@n1Mseguranza", {
   // nome banco, user, senha, local do host, tipo de banco
   host: "localhost",
   dialect: "mysql",
@@ -11,3 +11,12 @@ module.exports={
     Sequelize: Sequelize,
     sequelize:  sequelize
 }
+/*
+CREATE TABLE lists( 
+  criticidade varchar(50),
+  solicitante varchar(100),
+  descricao varchar (200),
+  id integer (50),
+  createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ,
+  updatedAt DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);*/
