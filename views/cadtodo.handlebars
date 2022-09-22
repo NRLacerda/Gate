@@ -1,4 +1,19 @@
-<form action="/add" method="POST">
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro de SOL</title>
+  <style>
+    .textarea {
+  width: 300px;
+  height: 150px;
+  }
+  </style>
+</head>
+<body>
+  <form action="/add" method="POST">
  <label for="criticidade">Escolha a criticidade:</label>
   <select name="criticidade" id="criticidade">
   <option value="Mínimo">Mínimo</option>
@@ -13,6 +28,9 @@
   <label>
     Descrição
   </label>
-  <input type="text" name="descricao" />
+  <input class="textarea" type="text" name="descricao" />
   <button type="submit">Fazer solicitação</button>
 </form>
+</body>
+</html>
+
