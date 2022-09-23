@@ -11,18 +11,24 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
 		<style>
-			.body{ font-family: 'Roboto', sans-serif; } .textarea { width: 300px;
-			height: 150px; }
-            /*For some reason just inline style is working*/
+			.body{ font-family: 'Roboto', sans-serif;font-size: 0.5rem; } .textarea {
+			width: 300px; height: 150px; } .margin{height:35vh; display:inline-block;
+			margin-right: 3vh; margin-bottom:3vh;border:0.3vh solid black;
+			background-color: rgb(143, 156, 255);}.content{margin-left: 3vh;} /*For
+			some reason just inline style is working*/
 		</style>
 	</head>
 	<body class="body">
 		{{#each list}}
-			<h1>{{id}}</h1>
-			<h1>{{criticidade}}</h1>
-			<h1>{{solicitante}}</h1>
-			<h1>{{descricao}}</h1>
-			<h1>{{createdAt}}</h1>
+			<div class="margin">
+				<div class="content">
+					<h1>ID {{id}}</h1>
+					<h1>Nível: {{criticidade}}</h1>
+					<h1>Por: {{solicitante}}</h1>
+					<h1>{{descricao}}</h1>
+					<h1>{{createdAt}}</h1>
+				</div>
+			</div>
 		{{/each}}
 		<a href="./cadtodo"><button> Nova Solicitação </button></a>
 	</body>
