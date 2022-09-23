@@ -13,10 +13,10 @@ module.exports={
 }
 /*
 CREATE TABLE lists( 
+  id int primary key AUTO_INCREMENT,
   criticidade varchar(50),
   solicitante varchar(100),
   descricao varchar (200),
-  id integer (50),
   createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ,
   updatedAt DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );*/
