@@ -1,37 +1,57 @@
-<!DOCTYPE html>
+<link rel="stylesheet" href="./layouts/style.css" />
 <html lang="pt">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cadastro de SOL</title>
-  <style>
-  .textarea {
-  width: 300px;
-  height: 150px;
-  }
-  </style>
-</head>
-<body>
-  <form action="/add" method="POST">
- <label for="criticidade">Escolha a criticidade:</label>
-  <select name="criticidade" id="criticidade">
-  <option value="Mínimo">Mínimo</option>
-  <option value="Moderado">Moderado</option>
-  <option value="Severo">Severo</option>
-  <option value="Prioritario">Prioritario</option>
-  </select> 
-  <label>
-    Solicitante
-  </label>
-  <input type="text" name="solicitante" />
-  <label>
-    Descrição
-  </label>
-  <input class="textarea" type="text" name="descricao" />
-  <button type="submit">Fazer solicitação</button>
-</form>
-<a href="./todolist"><button> Lista de solicitações </button></a>
-</body>
+	<head>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+			rel="stylesheet"
+		/>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Cadastro de SOL</title>
+		<style>
+			.body{ font-family: 'Roboto', sans-serif; } .textarea { width: 300px;
+			height: 150px; } .margin{ margin-bottom: 5vh;display:inline-flex; border-radius: 5px;}
+		</style>
+	</head>
+	<body class="body">
+		<form action="/add" method="POST">
+			<div>
+				<label for="criticidade">Escolha a criticidade:</label>
+			</div>
+			<div>
+				<select name="criticidade" id="criticidade">
+					<option value="Mínimo">Mínimo</option>
+					<option value="Moderado">Moderado</option>
+					<option value="Severo">Severo</option>
+					<option value="Prioritario">Prioritario</option>
+				</select>
+			</div>
+			<div>
+				<label>
+					Solicitante
+				</label>
+			</div>
+			<div>
+				<input type="text" name="solicitante" />
+			</div>
+			<div>
+				<label>
+					Descrição
+				</label>
+			</div>
+			<div class="margin">
+				<input class="textarea" type="text" name="descricao" />
+			</div>
+			<div class="margin">
+				<button type="submit">Fazer solicitação</button>
+			</div>
+		</form>
+    <div>
+      
+    </div>
+		<a href="./todolist"><button> Lista de solicitações </button></a>
+	</body>
 </html>
-

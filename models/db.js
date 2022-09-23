@@ -1,16 +1,16 @@
 const Sequelize = require("sequelize");
 
 const sequelize = new Sequelize("todolist", "root", "@n1Mseguranza", {
-  // nome banco, user, senha, local do host, tipo de banco
-  host: "localhost",
-  dialect: "mysql",
-  query:{raw:true}
+	// nome banco, user, senha, local do host, tipo de banco
+	host: "localhost",
+	dialect: "mysql",
+	query: { raw: true },
 });
 
-module.exports={
-    Sequelize: Sequelize,
-    sequelize:  sequelize
-}
+module.exports = {
+	Sequelize: Sequelize,
+	sequelize: sequelize,
+};
 /*
 CREATE TABLE lists( 
   id int primary key AUTO_INCREMENT,
