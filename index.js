@@ -4,6 +4,8 @@ const handlebars = require("express-handlebars");
 const Post = require("./models/post");
 const alert = require("alert");
 
+
+// faz o hash de uma senha que vc inserrir em "name"
 function hash() {
 	var crypto = require("crypto");
 	var name = "@n1Mseguranza";
