@@ -4,6 +4,12 @@ const handlebars = require("express-handlebars");
 const Post = require("./models/post");
 const alert = require("alert");
 
+function hash() {
+	var crypto = require("crypto");
+	var name = "@n1Mseguranza";
+	var hash = crypto.createHash("md5").update(name).digest("hex");
+	console.log(hash); // 9b74c9897bac770ffc029102a200c5de
+}
 //Config
 // Handlebars, carrega os "html"
 
@@ -21,8 +27,8 @@ app.use(express.json()); //Used to parse JSON bodies
 // Rotas
 app.get("/todolist", function (req, res) {
 	Post.findAll().then(function (list) {
+		hash();
 		// lista todos dados
-		console.log(list);
 		res.render("todolist", { list: list });
 	});
 });
