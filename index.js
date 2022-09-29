@@ -50,6 +50,27 @@ app.post(`/add`, function (req, res) {
 			alert("Houve algum erro " + erro);
 		});
 });
+app.get("/caduser", function(req,res){
+	res.render("caduser");
+})
+
+/*
+
+Infelizmente acho que cheguei no limite do handlebars
+não tem como eu pegar variáveis do html, ou ao menos
+não sei como, e sinceramente n vale mt tentar ver,
+já que irei utilizar o Angular, mas foi uma boa tentativa
+gostei bastante.
+
+
+app.post("/cadusuario", function(req,res){
+	Post.create({
+		usuario:req.body.usuario,
+		senha:req.body.criticidade,
+	})
+})
+*/
+
 app.listen(8181, function () {
 	console.log("server running!");
 });
