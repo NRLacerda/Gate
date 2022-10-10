@@ -6,6 +6,10 @@
 			href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
 			rel="stylesheet"
 		/>
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+		/>
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -14,22 +18,31 @@
 			.body{ font-family: 'Roboto', sans-serif;font-size: 0.5rem; } .textarea {
 			width: 300px; height: 150px; } .margin{height:35vh; display:inline-block;
 			margin-right: 3vh; margin-bottom:3vh;border:0.3vh solid black;
-			background-color: rgb(143, 156, 255);}.content{margin-left: 3vh;} /*For
+			background-color: rgb(143, 156, 255);}.content{margin-left: 3vh;}.lixo:hover{cursor: pointer;} /*For
 			some reason just inline style is working*/
 		</style>
 	</head>
 	<body class="body">
 		{{#each list}}
-			<div class="margin">
+			<div id="id" data-id="{{id}}" class="margin">
 				<div class="content">
-					<h1>ID {{id}}</h1>
+					<h1>Id {{id}}</h1>
 					<h1>Nível: {{criticidade}}</h1>
 					<h1>Por: {{solicitante}}</h1>
 					<h1>{{descricao}}</h1>
 					<h1>{{createdAt}}</h1>
+					<a href=""><span action="/delpost" method="DELETE" onclick="push()"class="material-symbols-outlined lixo">
+						delete
+					</span></a>
 				</div>
 			</div>
 		{{/each}}
 		<a href="./cadtodo"><button> Nova Solicitação </button></a>
 	</body>
+		<script>
+		function push(){
+			let iddel = document.querySelector("div#id")?.dataset.id // => "27" or undefined if not found
+			alert(iddel)
+		}
+	</script>
 </html>

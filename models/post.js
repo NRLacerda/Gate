@@ -12,5 +12,6 @@ const Post = db.sequelize.define(`list`, {
 	},
 });
 
-// isso aqui cria o banco de dados, apenas executado na primeira vez Post.sync({force:true})
+// isso aqui cria o banco de dados, apenas executado na primeira vez
+// Post.sync({force:true})
 module.exports = Post;

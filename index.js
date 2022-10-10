@@ -27,17 +27,17 @@ app.use(express.urlencoded({ extended: false })); //Parse URL-encoded bodies
 app.use(express.json()); //Used to parse JSON bodies
 
 // Rotas
-app.get("/todolist", function (req, res) {
+app.get("/todolist", function (req,res) {
 	Post.findAll().then(function (list) {
 		hash();
 		// lista todos dados
 		res.render("todolist", { list: list });
 	});
 });
-app.get("/cadtodo", function (req, res) {
+app.get("/cadtodo", function (req,res) {
 	res.render("cadtodo"); // Rota de cadastro de sol
 });
-app.post(`/add`, function (req, res) {
+app.post(`/add`, function (req,req) {
 	Post.create({
 		// Rota que puxa o Post.js para inserir dados no BD conforme status abaixo
 		criticidade: req.body.criticidade, // ESSA é a referência, ele pega do body pra criar um dado
@@ -52,19 +52,16 @@ app.post(`/add`, function (req, res) {
 			alert("Houve algum erro " + erro);
 		});
 });
+/*app.delete("delpost", function (req,res){
+	Post.delete({
+		
+	})
+})*/
 app.get("/caduser", function(req,res){
 	res.render("caduser");
 })
 
 /*
-
-Infelizmente acho que cheguei no limite do handlebars
-não tem como eu pegar variáveis do html, ou ao menos
-não sei como, e sinceramente n vale mt tentar ver,
-já que irei utilizar o Angular, mas foi uma boa tentativa
-gostei bastante.
-
-
 app.post("/cadusuario", function(req,res){
 	Post.create({
 		usuario:req.body.usuario,
