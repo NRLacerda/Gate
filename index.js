@@ -37,7 +37,7 @@ app.get("/todolist", function (req,res) {
 app.get("/cadtodo", function (req,res) {
 	res.render("cadtodo"); // Rota de cadastro de sol
 });
-app.post(`/add`, function (req,req) {
+app.post(`/add`, function (req,res) {
 	Post.create({
 		// Rota que puxa o Post.js para inserir dados no BD conforme status abaixo
 		criticidade: req.body.criticidade, // ESSA é a referência, ele pega do body pra criar um dado
@@ -70,7 +70,7 @@ app.post("/cadusuario", function(req,res){
 })
 */
 
-app.listen(8181, function () {
+app.listen(1292, function () {
 	console.log("server running!");
 });
 
