@@ -1,3 +1,17 @@
+/*var mysql = require('mysql2')
+
+var con=mysql.createConnection({
+  host: "localhost",
+  user: "root",
+  password: "@n1Mseguranza",
+  database:"todolist"
+})
+
+con.connect(function(err) {
+  if (err) throw err;
+  console.log("Connected!");
+});
+*/
 const Sequelize = require("sequelize");
 
 const sequelize = new Sequelize("todolist", "root", "@n1Mseguranza", {
@@ -7,10 +21,18 @@ const sequelize = new Sequelize("todolist", "root", "@n1Mseguranza", {
 	query: { raw: true },
 });
 
+/*
+con.sequelize(function(err){
+  if (err) throw err;
+  console.log("Conectado!")
+})
+*/
+
 module.exports = {
 	Sequelize: Sequelize,
 	sequelize: sequelize,
 };
+
 /*
 CREATE TABLE lists( 
   id int primary key AUTO_INCREMENT,
