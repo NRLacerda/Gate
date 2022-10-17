@@ -5,13 +5,15 @@ const Post = require("./models/post");
 const alert = require("alert");
 
 
-// faz o hash de uma senha que vc inserrir em "name"
+// faz o hash de uma senha que vc inserir em "name"
 function hash() {
 	var crypto = require("crypto");
 	var name = "@n1Mseguranza";
 	var hash = crypto.createHash("md5").update(name).digest("hex");
-	console.log("Senha random hasheada"+ hash); // 
+	console.log("Senha random hasheada "+ hash); // 
 }
+
+
 //Config
 // Handlebars, carrega os "html"
 
@@ -40,8 +42,8 @@ app.get("/cadtodo", function (req,res) {
 app.post(`/add`, function (req,res) {
 	Post.create({
 		// Rota que puxa o Post.js para inserir dados no BD conforme status abaixo
-		criticidade: req.body.criticidade, // ESSA é a referência, ele pega do body pra criar um dado
-		solicitante: req.body.solicitante,
+		criticidade : req.body.criticidade, // ESSA é a referência, ele pega do body pra criar um dado
+		solicitante : req.body.solicitante,
 		descricao: req.body.descricao,
 	})
 		.then(function () {
@@ -73,12 +75,6 @@ app.post("/cadusuario", function(req,res){
 app.listen(1292, function () {
 	console.log("server running!");
 });
-
-/* Tinha usado isso pra testar se estava funcionando antes.
-   var username = req.body.user
-   var email = req.body.email
-   var idade = req.body.idade
-   results.send("Usuário cadastro com nome " + username + " Email: "+ email + " de idade " + idade)
 
 // futuramente usar nestjs que usa TS
 // template add users

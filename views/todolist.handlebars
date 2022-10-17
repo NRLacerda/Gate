@@ -22,7 +22,7 @@
 			some reason just inline style is working*/
 		</style>
 	</head>
-	<body class="body">
+	<body onload="autoRefresh()" class="body">
 		{{#each list}}
 			<div id="id" data-id="{{id}}" class="margin">
 				<div class="content">
@@ -40,6 +40,11 @@
 		<a href="./cadtodo"><button> Nova Solicitação </button></a>
 	</body>
 		<script>
+		// Essa função recarrega a pagina a cada 2 min.
+		setTimeout(() => {
+  			document.location.reload();
+		}, 240000);
+
 		function push(){
 			let iddel = document.querySelector("div#id")?.dataset.id // => "27" or undefined if not found
 			alert(iddel)
