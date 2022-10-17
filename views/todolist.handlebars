@@ -20,7 +20,7 @@
 			margin-right: 3vh; margin-bottom:3vh;border:0.3vh solid black;
 			background-color: rgb(143, 156, 255);}.content{margin-left:
 			3vh;}.lixo:hover{cursor: pointer;}.margin1{background-color: rgb(255, 137,
-			137);}.center{display: flex; justify-content: center;}.center2{display:
+			137);}.center{display: flex; justify-content: center;margin-bottom: 4em;}.center2{display:
 			inline-table;justify-content: center;} 
 		</style>
 	</head>
@@ -38,12 +38,12 @@
 					<h1>Por: {{solicitante}}</h1>
 					<h1>{{descricao}}</h1>
 					<h1>{{createdAt}}</h1>
-					<button onclick="deletePost()">
-						<a href=""><span
-							class="material-symbols-outlined lixo"
-						>
-							delete
-						</span></a>
+					<button onclick="deletado()">
+						<a>
+							<span class="material-symbols-outlined lixo">
+								delete
+							</span>
+						</a>
 					</button>
 				</div>
 			</div>
@@ -51,15 +51,13 @@
 		<a href="./cadtodo"><button> Nova Solicitação </button></a>
 	</body>
 	<script>
-		let Post = require("./models/post");
-		// Essa função recarrega a pagina a cada 2 min. setTimeout(() => {
-		setTimeout refresh(() => {
-  			document.location.reload();
-		}, 5000);
 
-		function deletePost(){ 
-		alert("teste")
-		Post.destroy({ where: { id: 32 }, }); 
-		}
+	setTimeout(() => {
+  			document.location.reload();
+		}, 30000);
+
+	function deletado(){
+		window.alert("Anotação deletada!")
+	}
 	</script>
 </html>
