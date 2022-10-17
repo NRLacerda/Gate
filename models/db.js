@@ -12,6 +12,7 @@ con.connect(function(err) {
   console.log("Connected!");
 });
 */
+
 const Sequelize = require("sequelize");
 
 const sequelize = new Sequelize("todolist", "root", "@n1Mseguranza", {
