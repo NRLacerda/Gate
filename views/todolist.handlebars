@@ -1,4 +1,4 @@
-<html lang="en">
+<html lang="pt-br">
 	<head>
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -18,36 +18,48 @@
 			.body{ font-family: 'Roboto', sans-serif;font-size: 0.5rem; } .textarea {
 			width: 300px; height: 150px; } .margin{height:35vh; display:inline-block;
 			margin-right: 3vh; margin-bottom:3vh;border:0.3vh solid black;
-			background-color: rgb(143, 156, 255);}.content{margin-left: 3vh;}.lixo:hover{cursor: pointer;} /*For
-			some reason just inline style is working*/
+			background-color: rgb(143, 156, 255);}.content{margin-left:
+			3vh;}.lixo:hover{cursor: pointer;}.margin1{background-color: rgb(255, 137,
+			137);}.center{display: flex; justify-content: center;}.center2{display:
+			inline-table;justify-content: center;} 
 		</style>
 	</head>
-	<body onload="autoRefresh()" class="body">
+	<body class="body">
+		<div class="center">
+			<button class="margin1">
+				<h2>Apagar <strong>TODAS</strong> solicitações</h2>
+			</button>
+		</div>
 		{{#each list}}
-			<div id="id" data-id="{{id}}" class="margin">
+			<div id="id" data-id="{{id}}" class="margin center2">
 				<div class="content">
 					<h1>Id {{id}}</h1>
 					<h1>Nível: {{criticidade}}</h1>
 					<h1>Por: {{solicitante}}</h1>
 					<h1>{{descricao}}</h1>
 					<h1>{{createdAt}}</h1>
-					<a href=""><span action="/delpost" method="DELETE" onclick="push()"class="material-symbols-outlined lixo">
-						delete
-					</span></a>
+					<button onclick="deletePost()">
+						<a href=""><span
+							class="material-symbols-outlined lixo"
+						>
+							delete
+						</span></a>
+					</button>
 				</div>
 			</div>
 		{{/each}}
 		<a href="./cadtodo"><button> Nova Solicitação </button></a>
 	</body>
-		<script>
-		// Essa função recarrega a pagina a cada 2 min.
-		setTimeout(() => {
+	<script>
+		let Post = require("./models/post");
+		// Essa função recarrega a pagina a cada 2 min. setTimeout(() => {
+		setTimeout refresh(() => {
   			document.location.reload();
-		}, 10000);
+		}, 5000);
 
-		function push(){
-			let iddel = document.querySelector("div#id")?.dataset.id // => "27" or undefined if not found
-			alert(iddel)
+		function deletePost(){ 
+		alert("teste")
+		Post.destroy({ where: { id: 32 }, }); 
 		}
 	</script>
 </html>
