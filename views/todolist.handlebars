@@ -38,7 +38,7 @@
 					<h1>Por: {{solicitante}}</h1>
 					<h1>{{descricao}}</h1>
 					<h1>{{createdAt}}</h1>
-					<button onclick="deletado()">
+					<button onclick="test()">
 						<a>
 							<span class="material-symbols-outlined lixo">
 								delete
@@ -56,8 +56,9 @@
   			document.location.reload();
 		}, 30000);
 
-	function deletado(){
-		window.alert("Anotação deletada!")
+	function test(tst){
+		let test1 = tst.target;
+		alert(test1)
 	}
 	</script>
 </html>
