@@ -31,7 +31,6 @@ app.use(express.json()); //Used to parse JSON bodies
 // Rotas
 app.get("/todolist", function (req,res) {
 	Post.findAll().then(function (list) {
-		hash();
 		// lista todos dados
 		res.render("todolist", { list: list });
 	});
@@ -46,19 +45,18 @@ app.post(`/add`, function (req,res) {
 		solicitante : req.body.solicitante,
 		descricao: req.body.descricao,
 	})
-		.then(function () {
-			// e se não conseguir ele da erro
-			alert("Solicitação feita com sucesso");
-		})
 		.catch(function (erro) {
 			alert("Houve algum erro " + erro);
 		});
 });
+
+app.delete('/delpost', function(req,res){
+	res.render("caduser");
+})
 /*app.delete("delpost", function (req,res){
 	Post.delete({
 		
 	})
-})*/
 app.get("/caduser", function(req,res){
 	res.render("caduser");
 })
@@ -72,7 +70,7 @@ app.post("/cadusuario", function(req,res){
 })
 */
 
-app.listen(1292, function () {
+app.listen(80, function () {
 	console.log("server running!");
 });
 
