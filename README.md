@@ -4,4 +4,4 @@
 <li>O aplicativo é hospedado utilizando o Express</li>
 <li>O app é hospedado numa VM Ubuntu, na digital Ocean <a href="http://68.183.98.208/cadtodo">aqui!</a></li>
 <li>O app permanece rodando graças a Lib PM2, que o faz rodar como serviço no Linux.</li>
-<li> </li>
+<li> T</li>
